@@ -37,4 +37,10 @@ $(document).ready(function(){
 	$('.menu-btn').on('click', function(){
 		$(this).parent().toggleClass('menu-open')
 	})
+
+	$('.lazy').each(function(i){
+		setTimeout(function(){
+			$('.lazy').eq(i).addClass('loaded')
+		}, i * 200)
+	})
 });

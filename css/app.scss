@@ -1133,3 +1133,13 @@ div[class*="tab-"] {
         color: white;
     }
 }
+
+.lazy {
+
+    @include prefix(transition, opacity .3s, ms moz webkit);
+
+    &.loaded {
+
+        opacity: 1;
+    }
+}
