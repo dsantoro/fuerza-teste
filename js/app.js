@@ -28,4 +28,13 @@ $(document).ready(function(){
 			}
 		}
 	})
+
+	$(window).on('load', function(){
+		var html = $('.navigation').clone()
+		$('.offset-menu').append(html)
+	})
+
+	$('.menu-btn').on('click', function(){
+		$(this).parent().toggleClass('menu-open')
+	})
 });

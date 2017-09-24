@@ -558,6 +558,18 @@ ul, p {
   display: block;
 }
 
+@media (max-width: 1024px) {
+  .card-header .logo {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 320px) {
+  .card-header .logo {
+    max-width: 60%;
+  }
+}
+
 .card-header .navigation {
   list-style: none;
   float: right;
@@ -753,6 +765,15 @@ div[class*="carousel"] .slick-slide {
 .list-tabs > li > a:hover {
   background-color: #28302a;
   color: #c8bc3c;
+}
+
+@media (max-width: 600px) {
+  .home-tabs {
+    margin: 60px 0 30px;
+  }
+  .home-tabs .list-tabs {
+    margin-bottom: 20px;
+  }
 }
 
 .tab-content.tab-1 {
@@ -1022,4 +1043,77 @@ div[class*="tab-"] {
   color: white;
   opacity: .5;
   margin: 0;
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    background: #272f29;
+  }
+  .site-footer .footer-text {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .offset-menu {
+    display: none;
+  }
+}
+
+.offset-menu {
+  max-width: calc(320px - 50px);
+  background-color: #272f29;
+  position: fixed;
+  height: 100vh;
+  z-index: 2000;
+  width: 100%;
+  left: 0;
+  top: 0;
+  -ms-transition: transform 0.2s ease-in-out;
+  -moz-transition: transform 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  -ms-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+.offset-menu.menu-open {
+  -ms-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.offset-menu > ul {
+  padding: 30px 20px;
+  list-style: none;
+  margin: 0;
+}
+
+.offset-menu > ul > li:not(:last-child) {
+  border-bottom: 1px solid #d9cc3f;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.offset-menu > ul > li {
+  width: 100%;
+}
+
+.offset-menu > ul > li > a {
+  display: block;
+}
+
+.offset-menu > .menu-btn {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 0;
+  left: 100%;
+  background-color: #272f29;
+  font-size: 20px;
+  font-size: 1.25rem;
+  color: white;
 }

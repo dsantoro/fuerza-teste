@@ -519,6 +519,22 @@ ul, p {
         display: block;
     }
 
+    @media (max-width: 1024px) {
+
+        .logo {
+
+            display: inline-block;
+        }
+    }
+
+    @media (max-width: 320px) {
+        
+        .logo {
+
+            max-width: 60%;
+        }
+    }
+
     .navigation {
 
         list-style: none;
@@ -744,6 +760,19 @@ div[class*="carousel"] {
                 background-color: #28302a;
                 color: #c8bc3c;
             }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .home-tabs {
+
+        margin: 60px 0 30px;
+
+        .list-tabs {
+
+            margin-bottom: 20px;
         }
     }
 }
@@ -1026,5 +1055,81 @@ div[class*="tab-"] {
             opacity: .5;
             margin: 0;
         }
+    }
+}
+
+@media(max-width: 600px) {
+
+    .site-footer {
+
+        background: #272f29;
+
+        .footer-text {
+
+            margin-bottom: 15px;
+        }
+    }
+}
+
+@media(min-width: 1025px) {
+
+    .offset-menu {
+
+        display: none;
+    }
+}
+
+.offset-menu {
+
+    max-width: calc(320px - 50px);
+    background-color:#272f29;
+    position: fixed;
+    height: 100vh;
+    z-index: 2000;
+    width: 100%;
+    left: 0;
+    top: 0;
+    @include prefix(transition, transform .2s ease-in-out, ms moz webkit);
+    @include prefix(transform, translateX(-100%), ms moz webkit);
+
+    &.menu-open {
+
+        @include prefix(transform, translateX(0), ms moz webkit);
+    }
+
+    > ul {
+
+        padding: 30px 20px;
+        list-style: none;
+        margin: 0;
+
+        > li:not(:last-child) {
+            
+            border-bottom: 1px solid #d9cc3f;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+        }
+
+        > li {
+
+            width: 100%;
+
+            > a {
+                
+                display: block;
+            }
+        }
+    }
+
+    > .menu-btn {
+
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        top: 0;
+        left: 100%;
+        background-color: #272f29;
+        @include fontSize(20px);
+        color: white;
     }
 }
