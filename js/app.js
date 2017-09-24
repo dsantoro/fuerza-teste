@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+	function axysY() {
+		return $(window).scrollTop()
+	}
+
 	$('.carousel').slick({
 		arrows: false,
 		dots: true,
@@ -43,4 +47,12 @@ $(document).ready(function(){
 			$('.lazy').eq(i).addClass('loaded')
 		}, i * 200)
 	})
+
+	$(window).on('scroll', function(){
+		if(axysY() > 0){
+			$('.card-header').addClass('scrolled')
+		} else {
+			$('.card-header').removeClass('scrolled')
+		}
+	}) 
 });

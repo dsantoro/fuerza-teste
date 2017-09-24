@@ -498,13 +498,18 @@ ul, p {
 
 .card-header {
 
-    //background-color: pink;
-    position: absolute;
+    position: fixed;
     padding: 20px 0;
     z-index: 100;
     width: 100%;
     left: 0;
     top: 0;
+
+    &.scrolled {
+
+        background-color: rgba(39, 47, 41, 0.9);
+        padding: 10px 0;
+    }
 
     .site-title {
 
@@ -552,6 +557,12 @@ ul, p {
             > a {
 
                 color: white;
+                @include prefix(transition, color .3s, ms moz webkit);
+
+                &:hover {
+
+                    color: #d9cc3f;
+                }
             }
 
             &:not(:last-child) {
@@ -1136,7 +1147,7 @@ div[class*="tab-"] {
 
 .lazy {
 
-    @include prefix(transition, opacity .3s, ms moz webkit);
+    @include prefix(transition, all .3s, ms moz webkit);
 
     &.loaded {
 

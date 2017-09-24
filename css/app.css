@@ -539,12 +539,17 @@ ul, p {
 }
 
 .card-header {
-  position: absolute;
+  position: fixed;
   padding: 20px 0;
   z-index: 100;
   width: 100%;
   left: 0;
   top: 0;
+}
+
+.card-header.scrolled {
+  background-color: rgba(39, 47, 41, 0.9);
+  padding: 10px 0;
 }
 
 .card-header .site-title {
@@ -587,6 +592,14 @@ ul, p {
 
 .card-header .navigation > li > a {
   color: white;
+  -ms-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.card-header .navigation > li > a:hover {
+  color: #d9cc3f;
 }
 
 .card-header .navigation > li:not(:last-child) {
@@ -1119,10 +1132,10 @@ div[class*="tab-"] {
 }
 
 .lazy {
-  -ms-transition: opacity 0.3s;
-  -moz-transition: opacity 0.3s;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
+  -ms-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .lazy.loaded {
